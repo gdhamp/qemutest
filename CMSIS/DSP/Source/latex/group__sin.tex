@@ -1,0 +1,89 @@
+\hypertarget{group__sin}{}\section{Sine}
+\label{group__sin}\index{Sine@{Sine}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float32\+\_\+t \hyperlink{group__sin_gae164899c4a3fc0e946dc5d55555fe541}{arm\+\_\+sin\+\_\+f32} (float32\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Fast approximation to the trigonometric sine function for floating-\/point data. \end{DoxyCompactList}\item 
+q15\+\_\+t \hyperlink{group__sin_ga1fc6d6640be6cfa688a8bea0a48397ee}{arm\+\_\+sin\+\_\+q15} (q15\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Fast approximation to the trigonometric sine function for Q15 data. \end{DoxyCompactList}\item 
+q31\+\_\+t \hyperlink{group__sin_ga57aade7d8892585992cdc6375bd82f9c}{arm\+\_\+sin\+\_\+q31} (q31\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Fast approximation to the trigonometric sine function for Q31 data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Computes the trigonometric sine function using a combination of table lookup and linear interpolation. There are separate functions for Q15, Q31, and floating-\/point data types. The input to the floating-\/point version is in radians and in the range \mbox{[}0 2$\ast$pi) while the fixed-\/point Q15 and Q31 have a scaled input with the range \mbox{[}0 +0.9999\mbox{]} mapping to \mbox{[}0 2$\ast$pi). The fixed-\/point range is chosen so that a value of 2$\ast$pi wraps around to 0.
+
+The implementation is based on table lookup using 256 values together with linear interpolation. The steps used are\+:
+\begin{DoxyEnumerate}
+\item Calculation of the nearest integer table index
+\item Compute the fractional portion (fract) of the table index.
+\item The final result equals {\ttfamily (1.\+0f-\/fract)$\ast$a + fract$\ast$b;}
+\end{DoxyEnumerate}
+
+where 
+\begin{DoxyPre}
+   b=Table[index+0];
+   c=Table[index+1];
+\end{DoxyPre}
+ 
+
+\subsection{Function Documentation}
+\index{Sine@{Sine}!arm\+\_\+sin\+\_\+f32@{arm\+\_\+sin\+\_\+f32}}
+\index{arm\+\_\+sin\+\_\+f32@{arm\+\_\+sin\+\_\+f32}!Sine@{Sine}}
+\subsubsection[{\texorpdfstring{arm\+\_\+sin\+\_\+f32(float32\+\_\+t x)}{arm_sin_f32(float32_t x)}}]{\setlength{\rightskip}{0pt plus 5cm}float32\+\_\+t arm\+\_\+sin\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{float32\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{group__sin_gae164899c4a3fc0e946dc5d55555fe541}{}\label{group__sin_gae164899c4a3fc0e946dc5d55555fe541}
+
+
+Fast approximation to the trigonometric sine function for floating-\/point data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & input value in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sin(x). 
+\end{DoxyReturn}
+\index{Sine@{Sine}!arm\+\_\+sin\+\_\+q15@{arm\+\_\+sin\+\_\+q15}}
+\index{arm\+\_\+sin\+\_\+q15@{arm\+\_\+sin\+\_\+q15}!Sine@{Sine}}
+\subsubsection[{\texorpdfstring{arm\+\_\+sin\+\_\+q15(q15\+\_\+t x)}{arm_sin_q15(q15_t x)}}]{\setlength{\rightskip}{0pt plus 5cm}q15\+\_\+t arm\+\_\+sin\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{q15\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{group__sin_ga1fc6d6640be6cfa688a8bea0a48397ee}{}\label{group__sin_ga1fc6d6640be6cfa688a8bea0a48397ee}
+
+
+Fast approximation to the trigonometric sine function for Q15 data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & Scaled input value in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sin(x).
+\end{DoxyReturn}
+The Q15 input value is in the range \mbox{[}0 +0.9999\mbox{]} and is mapped to a radian value in the range \mbox{[}0 2$\ast$pi). \index{Sine@{Sine}!arm\+\_\+sin\+\_\+q31@{arm\+\_\+sin\+\_\+q31}}
+\index{arm\+\_\+sin\+\_\+q31@{arm\+\_\+sin\+\_\+q31}!Sine@{Sine}}
+\subsubsection[{\texorpdfstring{arm\+\_\+sin\+\_\+q31(q31\+\_\+t x)}{arm_sin_q31(q31_t x)}}]{\setlength{\rightskip}{0pt plus 5cm}q31\+\_\+t arm\+\_\+sin\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{q31\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{group__sin_ga57aade7d8892585992cdc6375bd82f9c}{}\label{group__sin_ga57aade7d8892585992cdc6375bd82f9c}
+
+
+Fast approximation to the trigonometric sine function for Q31 data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & Scaled input value in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sin(x).
+\end{DoxyReturn}
+The Q31 input value is in the range \mbox{[}0 +0.9999\mbox{]} and is mapped to a radian value in the range \mbox{[}0 2$\ast$pi). 

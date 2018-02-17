@@ -1,0 +1,172 @@
+\hypertarget{group__PID}{}\section{P\+ID}
+\label{group__PID}\index{P\+ID@{P\+ID}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__PID_gae31536b19b82b93ed184fb1ab73cfcb3}{arm\+\_\+pid\+\_\+init\+\_\+f32} (arm\+\_\+pid\+\_\+instance\+\_\+f32 $\ast$S, int32\+\_\+t reset\+State\+Flag)
+\begin{DoxyCompactList}\small\item\em Initialization function for the floating-\/point P\+ID Control. \end{DoxyCompactList}\item 
+void \hyperlink{group__PID_ga2cb1e3d3ebb167348fdabec74653d5c3}{arm\+\_\+pid\+\_\+init\+\_\+q15} (arm\+\_\+pid\+\_\+instance\+\_\+q15 $\ast$S, int32\+\_\+t reset\+State\+Flag)
+\item 
+void \hyperlink{group__PID_gad9d88485234fa9460b1ce9e64989ac86}{arm\+\_\+pid\+\_\+init\+\_\+q31} (arm\+\_\+pid\+\_\+instance\+\_\+q31 $\ast$S, int32\+\_\+t reset\+State\+Flag)
+\begin{DoxyCompactList}\small\item\em Initialization function for the Q31 P\+ID Control. \end{DoxyCompactList}\item 
+void \hyperlink{group__PID_ga9ec860bcb6f8ca31205bf0f1b51ab723}{arm\+\_\+pid\+\_\+reset\+\_\+f32} (arm\+\_\+pid\+\_\+instance\+\_\+f32 $\ast$S)
+\begin{DoxyCompactList}\small\item\em Reset function for the floating-\/point P\+ID Control. \end{DoxyCompactList}\item 
+void \hyperlink{group__PID_ga408566dacb4fa6e0458b2c75672e525f}{arm\+\_\+pid\+\_\+reset\+\_\+q15} (arm\+\_\+pid\+\_\+instance\+\_\+q15 $\ast$S)
+\begin{DoxyCompactList}\small\item\em Reset function for the Q15 P\+ID Control. \end{DoxyCompactList}\item 
+void \hyperlink{group__PID_gaeecbacd3fb37c608ec25474d3a0dffa9}{arm\+\_\+pid\+\_\+reset\+\_\+q31} (arm\+\_\+pid\+\_\+instance\+\_\+q31 $\ast$S)
+\begin{DoxyCompactList}\small\item\em Reset function for the Q31 P\+ID Control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{P\+ID@{P\+ID}!arm\+\_\+pid\+\_\+init\+\_\+f32@{arm\+\_\+pid\+\_\+init\+\_\+f32}}
+\index{arm\+\_\+pid\+\_\+init\+\_\+f32@{arm\+\_\+pid\+\_\+init\+\_\+f32}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{arm\+\_\+pid\+\_\+init\+\_\+f32(arm\+\_\+pid\+\_\+instance\+\_\+f32 $\ast$\+S, int32\+\_\+t reset\+State\+Flag)}{arm_pid_init_f32(arm_pid_instance_f32 *S, int32_t resetStateFlag)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+pid\+\_\+init\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+pid\+\_\+instance\+\_\+f32 $\ast$}]{S, }
+\item[{int32\+\_\+t}]{reset\+State\+Flag}
+\end{DoxyParamCaption}
+)}\hypertarget{group__PID_gae31536b19b82b93ed184fb1ab73cfcb3}{}\label{group__PID_gae31536b19b82b93ed184fb1ab73cfcb3}
+
+
+Initialization function for the floating-\/point P\+ID Control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the P\+ID structure. \\
+\hline
+\mbox{\tt in}  & {\em reset\+State\+Flag} & flag to reset the state. 0 = no change in state \& 1 = reset the state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The {\ttfamily reset\+State\+Flag} specifies whether to set state to zero or not. ~\newline
+The function computes the structure fields\+: {\ttfamily A0}, {\ttfamily A1} {\ttfamily A2} using the proportional gain( {\ttfamily Kp}), integral gain( {\ttfamily Ki}) and derivative gain( {\ttfamily Kd}) also sets the state variables to all zeros. 
+\end{DoxyParagraph}
+\index{P\+ID@{P\+ID}!arm\+\_\+pid\+\_\+init\+\_\+q15@{arm\+\_\+pid\+\_\+init\+\_\+q15}}
+\index{arm\+\_\+pid\+\_\+init\+\_\+q15@{arm\+\_\+pid\+\_\+init\+\_\+q15}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{arm\+\_\+pid\+\_\+init\+\_\+q15(arm\+\_\+pid\+\_\+instance\+\_\+q15 $\ast$\+S, int32\+\_\+t reset\+State\+Flag)}{arm_pid_init_q15(arm_pid_instance_q15 *S, int32_t resetStateFlag)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+pid\+\_\+init\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+pid\+\_\+instance\+\_\+q15 $\ast$}]{S, }
+\item[{int32\+\_\+t}]{reset\+State\+Flag}
+\end{DoxyParamCaption}
+)}\hypertarget{group__PID_ga2cb1e3d3ebb167348fdabec74653d5c3}{}\label{group__PID_ga2cb1e3d3ebb167348fdabec74653d5c3}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the Q15 P\+ID structure. \\
+\hline
+\mbox{\tt in}  & {\em reset\+State\+Flag} & flag to reset the state. 0 = no change in state 1 = reset the state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The {\ttfamily reset\+State\+Flag} specifies whether to set state to zero or not. ~\newline
+The function computes the structure fields\+: {\ttfamily A0}, {\ttfamily A1} {\ttfamily A2} using the proportional gain( {\ttfamily Kp}), integral gain( {\ttfamily Ki}) and derivative gain( {\ttfamily Kd}) also sets the state variables to all zeros. 
+\end{DoxyParagraph}
+\index{P\+ID@{P\+ID}!arm\+\_\+pid\+\_\+init\+\_\+q31@{arm\+\_\+pid\+\_\+init\+\_\+q31}}
+\index{arm\+\_\+pid\+\_\+init\+\_\+q31@{arm\+\_\+pid\+\_\+init\+\_\+q31}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{arm\+\_\+pid\+\_\+init\+\_\+q31(arm\+\_\+pid\+\_\+instance\+\_\+q31 $\ast$\+S, int32\+\_\+t reset\+State\+Flag)}{arm_pid_init_q31(arm_pid_instance_q31 *S, int32_t resetStateFlag)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+pid\+\_\+init\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+pid\+\_\+instance\+\_\+q31 $\ast$}]{S, }
+\item[{int32\+\_\+t}]{reset\+State\+Flag}
+\end{DoxyParamCaption}
+)}\hypertarget{group__PID_gad9d88485234fa9460b1ce9e64989ac86}{}\label{group__PID_gad9d88485234fa9460b1ce9e64989ac86}
+
+
+Initialization function for the Q31 P\+ID Control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the Q31 P\+ID structure. \\
+\hline
+\mbox{\tt in}  & {\em reset\+State\+Flag} & flag to reset the state. 0 = no change in state 1 = reset the state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The {\ttfamily reset\+State\+Flag} specifies whether to set state to zero or not. ~\newline
+The function computes the structure fields\+: {\ttfamily A0}, {\ttfamily A1} {\ttfamily A2} using the proportional gain( {\ttfamily Kp}), integral gain( {\ttfamily Ki}) and derivative gain( {\ttfamily Kd}) also sets the state variables to all zeros. 
+\end{DoxyParagraph}
+\index{P\+ID@{P\+ID}!arm\+\_\+pid\+\_\+reset\+\_\+f32@{arm\+\_\+pid\+\_\+reset\+\_\+f32}}
+\index{arm\+\_\+pid\+\_\+reset\+\_\+f32@{arm\+\_\+pid\+\_\+reset\+\_\+f32}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{arm\+\_\+pid\+\_\+reset\+\_\+f32(arm\+\_\+pid\+\_\+instance\+\_\+f32 $\ast$\+S)}{arm_pid_reset_f32(arm_pid_instance_f32 *S)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+pid\+\_\+reset\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+pid\+\_\+instance\+\_\+f32 $\ast$}]{S}
+\end{DoxyParamCaption}
+)}\hypertarget{group__PID_ga9ec860bcb6f8ca31205bf0f1b51ab723}{}\label{group__PID_ga9ec860bcb6f8ca31205bf0f1b51ab723}
+
+
+Reset function for the floating-\/point P\+ID Control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$S} & Instance pointer of P\+ID control data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+The function resets the state buffer to zeros. 
+\end{DoxyParagraph}
+\index{P\+ID@{P\+ID}!arm\+\_\+pid\+\_\+reset\+\_\+q15@{arm\+\_\+pid\+\_\+reset\+\_\+q15}}
+\index{arm\+\_\+pid\+\_\+reset\+\_\+q15@{arm\+\_\+pid\+\_\+reset\+\_\+q15}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{arm\+\_\+pid\+\_\+reset\+\_\+q15(arm\+\_\+pid\+\_\+instance\+\_\+q15 $\ast$\+S)}{arm_pid_reset_q15(arm_pid_instance_q15 *S)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+pid\+\_\+reset\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+pid\+\_\+instance\+\_\+q15 $\ast$}]{S}
+\end{DoxyParamCaption}
+)}\hypertarget{group__PID_ga408566dacb4fa6e0458b2c75672e525f}{}\label{group__PID_ga408566dacb4fa6e0458b2c75672e525f}
+
+
+Reset function for the Q15 P\+ID Control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$S} & Instance pointer of P\+ID control data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+The function resets the state buffer to zeros. 
+\end{DoxyParagraph}
+\index{P\+ID@{P\+ID}!arm\+\_\+pid\+\_\+reset\+\_\+q31@{arm\+\_\+pid\+\_\+reset\+\_\+q31}}
+\index{arm\+\_\+pid\+\_\+reset\+\_\+q31@{arm\+\_\+pid\+\_\+reset\+\_\+q31}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{arm\+\_\+pid\+\_\+reset\+\_\+q31(arm\+\_\+pid\+\_\+instance\+\_\+q31 $\ast$\+S)}{arm_pid_reset_q31(arm_pid_instance_q31 *S)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+pid\+\_\+reset\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+pid\+\_\+instance\+\_\+q31 $\ast$}]{S}
+\end{DoxyParamCaption}
+)}\hypertarget{group__PID_gaeecbacd3fb37c608ec25474d3a0dffa9}{}\label{group__PID_gaeecbacd3fb37c608ec25474d3a0dffa9}
+
+
+Reset function for the Q31 P\+ID Control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$S} & Instance pointer of P\+ID control data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+The function resets the state buffer to zeros. 
+\end{DoxyParagraph}

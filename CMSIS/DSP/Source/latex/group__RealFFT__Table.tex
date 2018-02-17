@@ -1,0 +1,93 @@
+\hypertarget{group__RealFFT__Table}{}\section{Real F\+FT Tables}
+\label{group__RealFFT__Table}\index{Real F\+F\+T Tables@{Real F\+F\+T Tables}}
+Collaboration diagram for Real F\+FT Tables\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const q15\+\_\+t A\+L\+I\+G\+N4 \hyperlink{group__RealFFT__Table_ga11e84d0ee257a547f749b37dd0078d36}{real\+Coef\+A\+Q15} \mbox{[}8192\mbox{]}
+\item 
+const q15\+\_\+t A\+L\+I\+G\+N4 \hyperlink{group__RealFFT__Table_gac871666f018b70938b2b98017628cb97}{real\+Coef\+B\+Q15} \mbox{[}8192\mbox{]}
+\item 
+const q31\+\_\+t \hyperlink{group__RealFFT__Table_gaf1592a6cf0504675205074a43c3728a2}{real\+Coef\+A\+Q31} \mbox{[}8192\mbox{]}
+\item 
+const q31\+\_\+t \hyperlink{group__RealFFT__Table_ga1eb5745728a61c3715755f5d69a4a960}{real\+Coef\+B\+Q31} \mbox{[}8192\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Variable Documentation}
+\index{Real F\+F\+T Tables@{Real F\+F\+T Tables}!real\+Coef\+A\+Q15@{real\+Coef\+A\+Q15}}
+\index{real\+Coef\+A\+Q15@{real\+Coef\+A\+Q15}!Real F\+F\+T Tables@{Real F\+F\+T Tables}}
+\subsubsection[{\texorpdfstring{real\+Coef\+A\+Q15}{realCoefAQ15}}]{\setlength{\rightskip}{0pt plus 5cm}const q15\+\_\+t A\+L\+I\+G\+N4 real\+Coef\+A\+Q15\mbox{[}8192\mbox{]}}\hypertarget{group__RealFFT__Table_ga11e84d0ee257a547f749b37dd0078d36}{}\label{group__RealFFT__Table_ga11e84d0ee257a547f749b37dd0078d36}
+\begin{DoxyParagraph}{}
+Generation fixed-\/point real\+Coef\+A\+Q15 array in Q15 format\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+n = 4096 
+\begin{DoxyPre}for (i = 0; i < n; i++)
+ \{
+   pATable[2 * i] = 0.5 * (1.0 - sin (2 * PI / (double) (2 * n) * (double) i));
+   pATable[2 * i + 1] = 0.5 * (-1.0 * cos (2 * PI / (double) (2 * n) * (double) i));
+ \} \end{DoxyPre}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Convert to fixed point Q15 format round(p\+A\+Table\mbox{[}i\mbox{]} $\ast$ pow(2, 15)) 
+\end{DoxyParagraph}
+\index{Real F\+F\+T Tables@{Real F\+F\+T Tables}!real\+Coef\+A\+Q31@{real\+Coef\+A\+Q31}}
+\index{real\+Coef\+A\+Q31@{real\+Coef\+A\+Q31}!Real F\+F\+T Tables@{Real F\+F\+T Tables}}
+\subsubsection[{\texorpdfstring{real\+Coef\+A\+Q31}{realCoefAQ31}}]{\setlength{\rightskip}{0pt plus 5cm}const q31\+\_\+t real\+Coef\+A\+Q31\mbox{[}8192\mbox{]}}\hypertarget{group__RealFFT__Table_gaf1592a6cf0504675205074a43c3728a2}{}\label{group__RealFFT__Table_gaf1592a6cf0504675205074a43c3728a2}
+\begin{DoxyParagraph}{}
+Generation fixed-\/point real\+Coef\+A\+Q31 array in Q31 format\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+n = 4096 
+\begin{DoxyPre}for (i = 0; i < n; i++)
+\{
+   pATable[2 * i] = 0.5 * (1.0 - sin (2 * PI / (double) (2 * n) * (double) i));
+   pATable[2 * i + 1] = 0.5 * (-1.0 * cos (2 * PI / (double) (2 * n) * (double) i));
+\}\end{DoxyPre}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Convert to fixed point Q31 format round(p\+A\+Table\mbox{[}i\mbox{]} $\ast$ pow(2, 31)) 
+\end{DoxyParagraph}
+\index{Real F\+F\+T Tables@{Real F\+F\+T Tables}!real\+Coef\+B\+Q15@{real\+Coef\+B\+Q15}}
+\index{real\+Coef\+B\+Q15@{real\+Coef\+B\+Q15}!Real F\+F\+T Tables@{Real F\+F\+T Tables}}
+\subsubsection[{\texorpdfstring{real\+Coef\+B\+Q15}{realCoefBQ15}}]{\setlength{\rightskip}{0pt plus 5cm}const q15\+\_\+t A\+L\+I\+G\+N4 real\+Coef\+B\+Q15\mbox{[}8192\mbox{]}}\hypertarget{group__RealFFT__Table_gac871666f018b70938b2b98017628cb97}{}\label{group__RealFFT__Table_gac871666f018b70938b2b98017628cb97}
+\begin{DoxyParagraph}{}
+Generation of real\+\_\+\+CoefB array\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+n = 4096 
+\begin{DoxyPre}for (i = 0; i < n; i++)
+ \{
+   pBTable[2 * i] = 0.5 * (1.0 + sin (2 * PI / (double) (2 * n) * (double) i));
+   pBTable[2 * i + 1] = 0.5 * (1.0 * cos (2 * PI / (double) (2 * n) * (double) i));
+ \} \end{DoxyPre}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Convert to fixed point Q15 format round(p\+B\+Table\mbox{[}i\mbox{]} $\ast$ pow(2, 15)) 
+\end{DoxyParagraph}
+\index{Real F\+F\+T Tables@{Real F\+F\+T Tables}!real\+Coef\+B\+Q31@{real\+Coef\+B\+Q31}}
+\index{real\+Coef\+B\+Q31@{real\+Coef\+B\+Q31}!Real F\+F\+T Tables@{Real F\+F\+T Tables}}
+\subsubsection[{\texorpdfstring{real\+Coef\+B\+Q31}{realCoefBQ31}}]{\setlength{\rightskip}{0pt plus 5cm}const q31\+\_\+t real\+Coef\+B\+Q31\mbox{[}8192\mbox{]}}\hypertarget{group__RealFFT__Table_ga1eb5745728a61c3715755f5d69a4a960}{}\label{group__RealFFT__Table_ga1eb5745728a61c3715755f5d69a4a960}
+\begin{DoxyParagraph}{}
+Generation of real\+Coef\+B\+Q31 array\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+n = 4096 
+\begin{DoxyPre}for (i = 0; i < n; i++)
+\{
+   pBTable[2 * i] = 0.5 * (1.0 + sin (2 * PI / (double) (2 * n) * (double) i));
+   pBTable[2 * i + 1] = 0.5 * (1.0 * cos (2 * PI / (double) (2 * n) * (double) i));
+\} \end{DoxyPre}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Convert to fixed point Q31 format round(p\+B\+Table\mbox{[}i\mbox{]} $\ast$ pow(2, 31)) 
+\end{DoxyParagraph}

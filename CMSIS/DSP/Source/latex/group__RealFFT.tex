@@ -1,0 +1,345 @@
+\hypertarget{group__RealFFT}{}\section{Real F\+FT Functions}
+\label{group__RealFFT}\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+Collaboration diagram for Real F\+FT Functions\+:
+% FIG 0
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__RealFFT__Table}{Real F\+F\+T Tables}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__RealFFT_ga3df1766d230532bc068fc4ed69d0fcdc}{arm\+\_\+rfft\+\_\+f32} (const arm\+\_\+rfft\+\_\+instance\+\_\+f32 $\ast$S, float32\+\_\+t $\ast$p\+Src, float32\+\_\+t $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Processing function for the floating-\/point R\+F\+F\+T/\+R\+I\+F\+FT. \end{DoxyCompactList}\item 
+void \hyperlink{group__RealFFT_ga180d8b764d59cbb85d37a2d5f7cd9799}{arm\+\_\+rfft\+\_\+fast\+\_\+f32} (arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 $\ast$S, float32\+\_\+t $\ast$p, float32\+\_\+t $\ast$p\+Out, uint8\+\_\+t ifft\+Flag)
+\begin{DoxyCompactList}\small\item\em Processing function for the floating-\/point real F\+FT. \end{DoxyCompactList}\item 
+arm\+\_\+status \hyperlink{group__RealFFT_gac5fceb172551e7c11eb4d0e17ef15aa3}{arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32} (arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 $\ast$S, uint16\+\_\+t fft\+Len)
+\begin{DoxyCompactList}\small\item\em Initialization function for the floating-\/point real F\+FT. \end{DoxyCompactList}\item 
+arm\+\_\+status {\bfseries arm\+\_\+rfft\+\_\+init\+\_\+f32} (arm\+\_\+rfft\+\_\+instance\+\_\+f32 $\ast$S, arm\+\_\+cfft\+\_\+radix4\+\_\+instance\+\_\+f32 $\ast$S\+\_\+\+C\+F\+FT, uint32\+\_\+t fft\+Len\+Real, uint32\+\_\+t ifft\+FlagR, uint32\+\_\+t bit\+Reverse\+Flag)\hypertarget{group__RealFFT_ga10717ee326bf50832ef1c25b85a23068}{}\label{group__RealFFT_ga10717ee326bf50832ef1c25b85a23068}
+
+\item 
+arm\+\_\+status \hyperlink{group__RealFFT_ga053450cc600a55410ba5b5605e96245d}{arm\+\_\+rfft\+\_\+init\+\_\+q15} (arm\+\_\+rfft\+\_\+instance\+\_\+q15 $\ast$S, uint32\+\_\+t fft\+Len\+Real, uint32\+\_\+t ifft\+FlagR, uint32\+\_\+t bit\+Reverse\+Flag)
+\begin{DoxyCompactList}\small\item\em Initialization function for the Q15 R\+F\+F\+T/\+R\+I\+F\+FT. \end{DoxyCompactList}\item 
+arm\+\_\+status \hyperlink{group__RealFFT_ga5abde938abbe72e95c5bab080eb33c45}{arm\+\_\+rfft\+\_\+init\+\_\+q31} (arm\+\_\+rfft\+\_\+instance\+\_\+q31 $\ast$S, uint32\+\_\+t fft\+Len\+Real, uint32\+\_\+t ifft\+FlagR, uint32\+\_\+t bit\+Reverse\+Flag)
+\begin{DoxyCompactList}\small\item\em Initialization function for the Q31 R\+F\+F\+T/\+R\+I\+F\+FT. \end{DoxyCompactList}\item 
+void \hyperlink{group__RealFFT_ga00e615f5db21736ad5b27fb6146f3fc5}{arm\+\_\+rfft\+\_\+q15} (const arm\+\_\+rfft\+\_\+instance\+\_\+q15 $\ast$S, q15\+\_\+t $\ast$p\+Src, q15\+\_\+t $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Processing function for the Q15 R\+F\+F\+T/\+R\+I\+F\+FT. \end{DoxyCompactList}\item 
+void \hyperlink{group__RealFFT_gabaeab5646aeea9844e6d42ca8c73fe3a}{arm\+\_\+rfft\+\_\+q31} (const arm\+\_\+rfft\+\_\+instance\+\_\+q31 $\ast$S, q31\+\_\+t $\ast$p\+Src, q31\+\_\+t $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Processing function for the Q31 R\+F\+F\+T/\+R\+I\+F\+FT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+The C\+M\+S\+IS D\+SP library includes specialized algorithms for computing the F\+FT of real data sequences. The F\+FT is defined over complex data but in many applications the input is real. Real F\+FT algorithms take advantage of the symmetry properties of the F\+FT and have a speed advantage over complex algorithms of the same length. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The Fast R\+F\+FT algorith relays on the mixed radix C\+F\+FT that save processor usage. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The real length N forward F\+FT of a sequence is computed using the steps shown below. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The real sequence is initially treated as if it were complex to perform a C\+F\+FT. Later, a processing stage reshapes the data to obtain half of the frequency spectrum in complex format. Except the first complex number that contains the two real numbers X\mbox{[}0\mbox{]} and X\mbox{[}N/2\mbox{]} all the data is complex. In other words, the first complex sample contains two real values packed. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The input for the inverse R\+F\+FT should keep the same format as the output of the forward R\+F\+FT. A first processing stage pre-\/process the data to later perform an inverse C\+F\+FT. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The algorithms for floating-\/point, Q15, and Q31 data are slightly different and we describe each algorithm in turn. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Floating-\/point}
+The main functions are \hyperlink{group__RealFFT_ga180d8b764d59cbb85d37a2d5f7cd9799}{arm\+\_\+rfft\+\_\+fast\+\_\+f32()} and \hyperlink{group__RealFFT_gac5fceb172551e7c11eb4d0e17ef15aa3}{arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32()}. The older functions \hyperlink{group__RealFFT_ga3df1766d230532bc068fc4ed69d0fcdc}{arm\+\_\+rfft\+\_\+f32()} and arm\+\_\+rfft\+\_\+init\+\_\+f32() have been deprecated but are still documented. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The F\+FT of a real N-\/point sequence has even symmetry in the frequency domain. The second half of the data equals the conjugate of the first half flipped in frequency. Looking at the data, we see that we can uniquely represent the F\+FT using only N/2 complex numbers. These are packed into the output array in alternating real and imaginary components\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+X = \{ real\mbox{[}0\mbox{]}, imag\mbox{[}0\mbox{]}, real\mbox{[}1\mbox{]}, imag\mbox{[}1\mbox{]}, real\mbox{[}2\mbox{]}, imag\mbox{[}2\mbox{]} ... real\mbox{[}(N/2)-\/1\mbox{]}, imag\mbox{[}(N/2)-\/1 \} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+It happens that the first complex number (real\mbox{[}0\mbox{]}, imag\mbox{[}0\mbox{]}) is actually all real. real\mbox{[}0\mbox{]} represents the DC offset, and imag\mbox{[}0\mbox{]} should be 0. (real\mbox{[}1\mbox{]}, imag\mbox{[}1\mbox{]}) is the fundamental frequency, (real\mbox{[}2\mbox{]}, imag\mbox{[}2\mbox{]}) is the first harmonic and so on. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The real F\+FT functions pack the frequency domain data in this fashion. The forward transform outputs the data in this form and the inverse transform expects input data in this form. The function always performs the needed bitreversal so that the input and output data is always in normal order. The functions support lengths of \mbox{[}32, 64, 128, ..., 4096\mbox{]} samples. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Q15 and Q31}
+The real algorithms are defined in a similar manner and utilize N/2 complex transforms behind the scenes. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The complex transforms used internally include scaling to prevent fixed-\/point overflows. The overall scaling equals 1/(fft\+Len/2). 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+A separate instance structure must be defined for each transform used but twiddle factor and bit reversal tables can be reused. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+There is also an associated initialization function for each data type. The initialization function performs the following operations\+:
+\begin{DoxyItemize}
+\item Sets the values of the internal structure fields.
+\item Initializes twiddle factor table and bit reversal table pointers.
+\item Initializes the internal complex F\+FT data structure. 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Use of the initialization function is optional. However, if the initialization function is used, then the instance structure cannot be placed into a const data section. To place an instance structure into a const data section, the instance structure should be manually initialized as follows\+: 
+\begin{DoxyPre}
+*arm\_rfft\_instance\_q31 S = \{fftLenReal, fftLenBy2, ifftFlagR, bitReverseFlagR, twidCoefRModifier, pTwiddleAReal, pTwiddleBReal, pCfft\};
+*arm\_rfft\_instance\_q15 S = \{fftLenReal, fftLenBy2, ifftFlagR, bitReverseFlagR, twidCoefRModifier, pTwiddleAReal, pTwiddleBReal, pCfft\};
+  \end{DoxyPre}
+ where {\ttfamily fft\+Len\+Real} is the length of the real transform; {\ttfamily fft\+Len\+By2} length of the internal complex transform. {\ttfamily ifft\+FlagR} Selects forward (=0) or inverse (=1) transform. {\ttfamily bit\+Reverse\+FlagR} Selects bit reversed output (=0) or normal order output (=1). {\ttfamily twid\+Coef\+R\+Modifier} stride modifier for the twiddle factor table. The value is based on the F\+FT length; {\ttfamily p\+Twiddle\+A\+Real}points to the A array of twiddle coefficients; {\ttfamily p\+Twiddle\+B\+Real}points to the B array of twiddle coefficients; {\ttfamily p\+Cfft} points to the C\+F\+FT Instance structure. The C\+F\+FT structure must also be initialized. Refer to \hyperlink{group__ComplexFFT_ga521f670cd9c571bc61aff9bec89f4c26}{arm\+\_\+cfft\+\_\+radix4\+\_\+f32()} for details regarding static initialization of the complex F\+FT instance structure.
+\end{DoxyParagraph}
+end of Real\+F\+F\+T\+\_\+\+Table group 
+
+\subsection{Function Documentation}
+\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}!arm\+\_\+rfft\+\_\+f32@{arm\+\_\+rfft\+\_\+f32}}
+\index{arm\+\_\+rfft\+\_\+f32@{arm\+\_\+rfft\+\_\+f32}!Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+\subsubsection[{\texorpdfstring{arm\+\_\+rfft\+\_\+f32(const arm\+\_\+rfft\+\_\+instance\+\_\+f32 $\ast$\+S, float32\+\_\+t $\ast$p\+Src, float32\+\_\+t $\ast$p\+Dst)}{arm_rfft_f32(const arm_rfft_instance_f32 *S, float32_t *pSrc, float32_t *pDst)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+rfft\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{const arm\+\_\+rfft\+\_\+instance\+\_\+f32 $\ast$}]{S, }
+\item[{float32\+\_\+t $\ast$}]{p\+Src, }
+\item[{float32\+\_\+t $\ast$}]{p\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{group__RealFFT_ga3df1766d230532bc068fc4ed69d0fcdc}{}\label{group__RealFFT_ga3df1766d230532bc068fc4ed69d0fcdc}
+
+
+Processing function for the floating-\/point R\+F\+F\+T/\+R\+I\+F\+FT. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000013}{Deprecated}]Do not use this function. It has been superceded by \hyperlink{group__RealFFT_ga180d8b764d59cbb85d37a2d5f7cd9799}{arm\+\_\+rfft\+\_\+fast\+\_\+f32} and will be removed in the future. \end{DoxyRefDesc}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$S} & points to an instance of the floating-\/point R\+F\+F\+T/\+R\+I\+F\+FT structure. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+Src} & points to the input buffer. \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Dst} & points to the output buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}!arm\+\_\+rfft\+\_\+fast\+\_\+f32@{arm\+\_\+rfft\+\_\+fast\+\_\+f32}}
+\index{arm\+\_\+rfft\+\_\+fast\+\_\+f32@{arm\+\_\+rfft\+\_\+fast\+\_\+f32}!Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+\subsubsection[{\texorpdfstring{arm\+\_\+rfft\+\_\+fast\+\_\+f32(arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 $\ast$\+S, float32\+\_\+t $\ast$p, float32\+\_\+t $\ast$p\+Out, uint8\+\_\+t ifft\+Flag)}{arm_rfft_fast_f32(arm_rfft_fast_instance_f32 *S, float32_t *p, float32_t *pOut, uint8_t ifftFlag)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+rfft\+\_\+fast\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 $\ast$}]{S, }
+\item[{float32\+\_\+t $\ast$}]{p, }
+\item[{float32\+\_\+t $\ast$}]{p\+Out, }
+\item[{uint8\+\_\+t}]{ifft\+Flag}
+\end{DoxyParamCaption}
+)}\hypertarget{group__RealFFT_ga180d8b764d59cbb85d37a2d5f7cd9799}{}\label{group__RealFFT_ga180d8b764d59cbb85d37a2d5f7cd9799}
+
+
+Processing function for the floating-\/point real F\+FT. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$S} & points to an arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 structure. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p} & points to the input buffer. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+Out} & points to the output buffer. \\
+\hline
+\mbox{\tt in}  & {\em ifft\+Flag} & R\+F\+FT if flag is 0, R\+I\+F\+FT if flag is 1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}!arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32@{arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32}}
+\index{arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32@{arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32}!Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+\subsubsection[{\texorpdfstring{arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32(arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 $\ast$\+S, uint16\+\_\+t fft\+Len)}{arm_rfft_fast_init_f32(arm_rfft_fast_instance_f32 *S, uint16_t fftLen)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+rfft\+\_\+fast\+\_\+init\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 $\ast$}]{S, }
+\item[{uint16\+\_\+t}]{fft\+Len}
+\end{DoxyParamCaption}
+)}\hypertarget{group__RealFFT_gac5fceb172551e7c11eb4d0e17ef15aa3}{}\label{group__RealFFT_gac5fceb172551e7c11eb4d0e17ef15aa3}
+
+
+Initialization function for the floating-\/point real F\+FT. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an arm\+\_\+rfft\+\_\+fast\+\_\+instance\+\_\+f32 structure. \\
+\hline
+\mbox{\tt in}  & {\em fft\+Len} & length of the Real Sequence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS if initialization is successful or A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+E\+R\+R\+OR if {\ttfamily fft\+Len} is not a supported value.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The parameter {\ttfamily fft\+Len} Specifies length of R\+F\+F\+T/\+C\+I\+F\+FT process. Supported F\+FT Lengths are 32, 64, 128, 256, 512, 1024, 2048, 4096. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+This Function also initializes Twiddle factor table pointer and Bit reversal table pointer. 
+\end{DoxyParagraph}
+\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}!arm\+\_\+rfft\+\_\+init\+\_\+q15@{arm\+\_\+rfft\+\_\+init\+\_\+q15}}
+\index{arm\+\_\+rfft\+\_\+init\+\_\+q15@{arm\+\_\+rfft\+\_\+init\+\_\+q15}!Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+\subsubsection[{\texorpdfstring{arm\+\_\+rfft\+\_\+init\+\_\+q15(arm\+\_\+rfft\+\_\+instance\+\_\+q15 $\ast$\+S, uint32\+\_\+t fft\+Len\+Real, uint32\+\_\+t ifft\+Flag\+R, uint32\+\_\+t bit\+Reverse\+Flag)}{arm_rfft_init_q15(arm_rfft_instance_q15 *S, uint32_t fftLenReal, uint32_t ifftFlagR, uint32_t bitReverseFlag)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+rfft\+\_\+init\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+rfft\+\_\+instance\+\_\+q15 $\ast$}]{S, }
+\item[{uint32\+\_\+t}]{fft\+Len\+Real, }
+\item[{uint32\+\_\+t}]{ifft\+FlagR, }
+\item[{uint32\+\_\+t}]{bit\+Reverse\+Flag}
+\end{DoxyParamCaption}
+)}\hypertarget{group__RealFFT_ga053450cc600a55410ba5b5605e96245d}{}\label{group__RealFFT_ga053450cc600a55410ba5b5605e96245d}
+
+
+Initialization function for the Q15 R\+F\+F\+T/\+R\+I\+F\+FT. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the Q15 R\+F\+F\+T/\+R\+I\+F\+FT structure. \\
+\hline
+\mbox{\tt in}  & {\em fft\+Len\+Real} & length of the F\+FT. \\
+\hline
+\mbox{\tt in}  & {\em ifft\+FlagR} & flag that selects forward (ifft\+FlagR=0) or inverse (ifft\+FlagR=1) transform. \\
+\hline
+\mbox{\tt in}  & {\em bit\+Reverse\+Flag} & flag that enables (bit\+Reverse\+Flag=1) or disables (bit\+Reverse\+Flag=0) bit reversal of output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS if initialization is successful or A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+E\+R\+R\+OR if {\ttfamily fft\+Len\+Real} is not a supported value.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The parameter {\ttfamily fft\+Len\+Real} Specifies length of R\+F\+F\+T/\+R\+I\+F\+FT Process. Supported F\+FT Lengths are 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The parameter {\ttfamily ifft\+FlagR} controls whether a forward or inverse transform is computed. Set(=1) ifft\+FlagR to calculate R\+I\+F\+FT, otherwise R\+F\+FT is calculated. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The parameter {\ttfamily bit\+Reverse\+Flag} controls whether output is in normal order or bit reversed order. Set(=1) bit\+Reverse\+Flag for output to be in normal order otherwise output is in bit reversed order. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+This function also initializes Twiddle factor table. 
+\end{DoxyParagraph}
+\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}!arm\+\_\+rfft\+\_\+init\+\_\+q31@{arm\+\_\+rfft\+\_\+init\+\_\+q31}}
+\index{arm\+\_\+rfft\+\_\+init\+\_\+q31@{arm\+\_\+rfft\+\_\+init\+\_\+q31}!Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+\subsubsection[{\texorpdfstring{arm\+\_\+rfft\+\_\+init\+\_\+q31(arm\+\_\+rfft\+\_\+instance\+\_\+q31 $\ast$\+S, uint32\+\_\+t fft\+Len\+Real, uint32\+\_\+t ifft\+Flag\+R, uint32\+\_\+t bit\+Reverse\+Flag)}{arm_rfft_init_q31(arm_rfft_instance_q31 *S, uint32_t fftLenReal, uint32_t ifftFlagR, uint32_t bitReverseFlag)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+rfft\+\_\+init\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+rfft\+\_\+instance\+\_\+q31 $\ast$}]{S, }
+\item[{uint32\+\_\+t}]{fft\+Len\+Real, }
+\item[{uint32\+\_\+t}]{ifft\+FlagR, }
+\item[{uint32\+\_\+t}]{bit\+Reverse\+Flag}
+\end{DoxyParamCaption}
+)}\hypertarget{group__RealFFT_ga5abde938abbe72e95c5bab080eb33c45}{}\label{group__RealFFT_ga5abde938abbe72e95c5bab080eb33c45}
+
+
+Initialization function for the Q31 R\+F\+F\+T/\+R\+I\+F\+FT. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the Q31 R\+F\+F\+T/\+R\+I\+F\+FT structure. \\
+\hline
+\mbox{\tt in}  & {\em fft\+Len\+Real} & length of the F\+FT. \\
+\hline
+\mbox{\tt in}  & {\em ifft\+FlagR} & flag that selects forward (ifft\+FlagR=0) or inverse (ifft\+FlagR=1) transform. \\
+\hline
+\mbox{\tt in}  & {\em bit\+Reverse\+Flag} & flag that enables (bit\+Reverse\+Flag=1) or disables (bit\+Reverse\+Flag=0) bit reversal of output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS if initialization is successful or A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+E\+R\+R\+OR if {\ttfamily fft\+Len\+Real} is not a supported value.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The parameter {\ttfamily fft\+Len\+Real} Specifies length of R\+F\+F\+T/\+R\+I\+F\+FT Process. Supported F\+FT Lengths are 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The parameter {\ttfamily ifft\+FlagR} controls whether a forward or inverse transform is computed. Set(=1) ifft\+FlagR to calculate R\+I\+F\+FT, otherwise R\+F\+FT is calculated. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The parameter {\ttfamily bit\+Reverse\+Flag} controls whether output is in normal order or bit reversed order. Set(=1) bit\+Reverse\+Flag for output to be in normal order otherwise output is in bit reversed order. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{7}
+This function also initializes Twiddle factor table. 
+\end{DoxyParagraph}
+\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}!arm\+\_\+rfft\+\_\+q15@{arm\+\_\+rfft\+\_\+q15}}
+\index{arm\+\_\+rfft\+\_\+q15@{arm\+\_\+rfft\+\_\+q15}!Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+\subsubsection[{\texorpdfstring{arm\+\_\+rfft\+\_\+q15(const arm\+\_\+rfft\+\_\+instance\+\_\+q15 $\ast$\+S, q15\+\_\+t $\ast$p\+Src, q15\+\_\+t $\ast$p\+Dst)}{arm_rfft_q15(const arm_rfft_instance_q15 *S, q15_t *pSrc, q15_t *pDst)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+rfft\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{const arm\+\_\+rfft\+\_\+instance\+\_\+q15 $\ast$}]{S, }
+\item[{q15\+\_\+t $\ast$}]{p\+Src, }
+\item[{q15\+\_\+t $\ast$}]{p\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{group__RealFFT_ga00e615f5db21736ad5b27fb6146f3fc5}{}\label{group__RealFFT_ga00e615f5db21736ad5b27fb6146f3fc5}
+
+
+Processing function for the Q15 R\+F\+F\+T/\+R\+I\+F\+FT. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$S} & points to an instance of the Q15 R\+F\+F\+T/\+R\+I\+F\+FT structure. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+Src} & points to the input buffer. \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Dst} & points to the output buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Input an output formats\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Internally input is downscaled by 2 for every stage to avoid saturations inside C\+F\+F\+T/\+C\+I\+F\+FT process. Hence the output format is different for different R\+F\+FT sizes. The input and output formats for different R\+F\+FT sizes and number of bits to upscale are mentioned in the tables below for R\+F\+FT and R\+I\+F\+FT\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\index{Real F\+F\+T Functions@{Real F\+F\+T Functions}!arm\+\_\+rfft\+\_\+q31@{arm\+\_\+rfft\+\_\+q31}}
+\index{arm\+\_\+rfft\+\_\+q31@{arm\+\_\+rfft\+\_\+q31}!Real F\+F\+T Functions@{Real F\+F\+T Functions}}
+\subsubsection[{\texorpdfstring{arm\+\_\+rfft\+\_\+q31(const arm\+\_\+rfft\+\_\+instance\+\_\+q31 $\ast$\+S, q31\+\_\+t $\ast$p\+Src, q31\+\_\+t $\ast$p\+Dst)}{arm_rfft_q31(const arm_rfft_instance_q31 *S, q31_t *pSrc, q31_t *pDst)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+rfft\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{const arm\+\_\+rfft\+\_\+instance\+\_\+q31 $\ast$}]{S, }
+\item[{q31\+\_\+t $\ast$}]{p\+Src, }
+\item[{q31\+\_\+t $\ast$}]{p\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{group__RealFFT_gabaeab5646aeea9844e6d42ca8c73fe3a}{}\label{group__RealFFT_gabaeab5646aeea9844e6d42ca8c73fe3a}
+
+
+Processing function for the Q31 R\+F\+F\+T/\+R\+I\+F\+FT. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$S} & points to an instance of the Q31 R\+F\+F\+T/\+R\+I\+F\+FT structure. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+Src} & points to the input buffer. \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Dst} & points to the output buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Input an output formats\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Internally input is downscaled by 2 for every stage to avoid saturations inside C\+F\+F\+T/\+C\+I\+F\+FT process. Hence the output format is different for different R\+F\+FT sizes. The input and output formats for different R\+F\+FT sizes and number of bits to upscale are mentioned in the tables below for R\+F\+FT and R\+I\+F\+FT\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}

@@ -1,0 +1,59 @@
+\hypertarget{group__SQRT}{}\section{S\+Q\+RT}
+\label{group__SQRT}\index{S\+Q\+RT@{S\+Q\+RT}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+arm\+\_\+status \hyperlink{group__SQRT_ga5abe5ca724f3e15849662b03752c1238}{arm\+\_\+sqrt\+\_\+q15} (q15\+\_\+t in, q15\+\_\+t $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Q15 square root function. \end{DoxyCompactList}\item 
+arm\+\_\+status \hyperlink{group__SQRT_ga119e25831e141d734d7ef10636670058}{arm\+\_\+sqrt\+\_\+q31} (q31\+\_\+t in, q31\+\_\+t $\ast$p\+Out)
+\begin{DoxyCompactList}\small\item\em Q31 square root function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{S\+Q\+RT@{S\+Q\+RT}!arm\+\_\+sqrt\+\_\+q15@{arm\+\_\+sqrt\+\_\+q15}}
+\index{arm\+\_\+sqrt\+\_\+q15@{arm\+\_\+sqrt\+\_\+q15}!S\+Q\+RT@{S\+Q\+RT}}
+\subsubsection[{\texorpdfstring{arm\+\_\+sqrt\+\_\+q15(q15\+\_\+t in, q15\+\_\+t $\ast$p\+Out)}{arm_sqrt_q15(q15_t in, q15_t *pOut)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+sqrt\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{q15\+\_\+t}]{in, }
+\item[{q15\+\_\+t $\ast$}]{p\+Out}
+\end{DoxyParamCaption}
+)}\hypertarget{group__SQRT_ga5abe5ca724f3e15849662b03752c1238}{}\label{group__SQRT_ga5abe5ca724f3e15849662b03752c1238}
+
+
+Q15 square root function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in} & input value. The range of the input value is \mbox{[}0 +1) or 0x0000 to 0x7\+F\+FF. \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Out} & square root of input value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS if the input value is positive and A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+E\+R\+R\+OR if the input is negative. For negative inputs, the function returns $\ast$p\+Out = 0. 
+\end{DoxyReturn}
+\index{S\+Q\+RT@{S\+Q\+RT}!arm\+\_\+sqrt\+\_\+q31@{arm\+\_\+sqrt\+\_\+q31}}
+\index{arm\+\_\+sqrt\+\_\+q31@{arm\+\_\+sqrt\+\_\+q31}!S\+Q\+RT@{S\+Q\+RT}}
+\subsubsection[{\texorpdfstring{arm\+\_\+sqrt\+\_\+q31(q31\+\_\+t in, q31\+\_\+t $\ast$p\+Out)}{arm_sqrt_q31(q31_t in, q31_t *pOut)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+sqrt\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{q31\+\_\+t}]{in, }
+\item[{q31\+\_\+t $\ast$}]{p\+Out}
+\end{DoxyParamCaption}
+)}\hypertarget{group__SQRT_ga119e25831e141d734d7ef10636670058}{}\label{group__SQRT_ga119e25831e141d734d7ef10636670058}
+
+
+Q31 square root function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in} & input value. The range of the input value is \mbox{[}0 +1) or 0x00000000 to 0x7\+F\+F\+F\+F\+F\+FF. \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Out} & square root of input value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS if the input value is positive and A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+E\+R\+R\+OR if the input is negative. For negative inputs, the function returns $\ast$p\+Out = 0. 
+\end{DoxyReturn}

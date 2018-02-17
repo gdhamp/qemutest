@@ -1,0 +1,98 @@
+\hypertarget{group__MatrixAdd}{}\section{Matrix Addition}
+\label{group__MatrixAdd}\index{Matrix Addition@{Matrix Addition}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+arm\+\_\+status \hyperlink{group__MatrixAdd_ga04bbf64a5f9c9e57dd1efb26a768aba1}{arm\+\_\+mat\+\_\+add\+\_\+f32} (const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+SrcA, const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+SrcB, arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Floating-\/point matrix addition. \end{DoxyCompactList}\item 
+arm\+\_\+status \hyperlink{group__MatrixAdd_ga147e90b7c12a162735ab8824127a33ee}{arm\+\_\+mat\+\_\+add\+\_\+q15} (const arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+SrcA, const arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+SrcB, arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Q15 matrix addition. \end{DoxyCompactList}\item 
+arm\+\_\+status \hyperlink{group__MatrixAdd_ga7d9d7d81a0832a17b831aad1e4a5dc16}{arm\+\_\+mat\+\_\+add\+\_\+q31} (const arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+SrcA, const arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+SrcB, arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Q31 matrix addition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Adds two matrices.  The functions check to make sure that {\ttfamily p\+SrcA}, {\ttfamily p\+SrcB}, and {\ttfamily p\+Dst} have the same number of rows and columns. 
+
+\subsection{Function Documentation}
+\index{Matrix Addition@{Matrix Addition}!arm\+\_\+mat\+\_\+add\+\_\+f32@{arm\+\_\+mat\+\_\+add\+\_\+f32}}
+\index{arm\+\_\+mat\+\_\+add\+\_\+f32@{arm\+\_\+mat\+\_\+add\+\_\+f32}!Matrix Addition@{Matrix Addition}}
+\subsubsection[{\texorpdfstring{arm\+\_\+mat\+\_\+add\+\_\+f32(const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Src\+A, const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Src\+B, arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Dst)}{arm_mat_add_f32(const arm_matrix_instance_f32 *pSrcA, const arm_matrix_instance_f32 *pSrcB, arm_matrix_instance_f32 *pDst)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+mat\+\_\+add\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$}]{p\+SrcA, }
+\item[{const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$}]{p\+SrcB, }
+\item[{arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$}]{p\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{group__MatrixAdd_ga04bbf64a5f9c9e57dd1efb26a768aba1}{}\label{group__MatrixAdd_ga04bbf64a5f9c9e57dd1efb26a768aba1}
+
+
+Floating-\/point matrix addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$p\+SrcA} & points to the first input matrix structure \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+SrcB} & points to the second input matrix structure \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Dst} & points to output matrix structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+I\+S\+M\+A\+T\+CH} or {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS} based on the outcome of size checking. 
+\end{DoxyReturn}
+\index{Matrix Addition@{Matrix Addition}!arm\+\_\+mat\+\_\+add\+\_\+q15@{arm\+\_\+mat\+\_\+add\+\_\+q15}}
+\index{arm\+\_\+mat\+\_\+add\+\_\+q15@{arm\+\_\+mat\+\_\+add\+\_\+q15}!Matrix Addition@{Matrix Addition}}
+\subsubsection[{\texorpdfstring{arm\+\_\+mat\+\_\+add\+\_\+q15(const arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+Src\+A, const arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+Src\+B, arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+Dst)}{arm_mat_add_q15(const arm_matrix_instance_q15 *pSrcA, const arm_matrix_instance_q15 *pSrcB, arm_matrix_instance_q15 *pDst)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+mat\+\_\+add\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{const arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$}]{p\+SrcA, }
+\item[{const arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$}]{p\+SrcB, }
+\item[{arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$}]{p\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{group__MatrixAdd_ga147e90b7c12a162735ab8824127a33ee}{}\label{group__MatrixAdd_ga147e90b7c12a162735ab8824127a33ee}
+
+
+Q15 matrix addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$p\+SrcA} & points to the first input matrix structure \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+SrcB} & points to the second input matrix structure \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Dst} & points to output matrix structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+I\+S\+M\+A\+T\+CH} or {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS} based on the outcome of size checking.
+\end{DoxyReturn}
+{\bfseries Scaling and Overflow Behavior\+:} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q15 range \mbox{[}0x8000 0x7\+F\+FF\mbox{]} will be saturated. 
+\end{DoxyParagraph}
+\index{Matrix Addition@{Matrix Addition}!arm\+\_\+mat\+\_\+add\+\_\+q31@{arm\+\_\+mat\+\_\+add\+\_\+q31}}
+\index{arm\+\_\+mat\+\_\+add\+\_\+q31@{arm\+\_\+mat\+\_\+add\+\_\+q31}!Matrix Addition@{Matrix Addition}}
+\subsubsection[{\texorpdfstring{arm\+\_\+mat\+\_\+add\+\_\+q31(const arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+Src\+A, const arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+Src\+B, arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+Dst)}{arm_mat_add_q31(const arm_matrix_instance_q31 *pSrcA, const arm_matrix_instance_q31 *pSrcB, arm_matrix_instance_q31 *pDst)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+mat\+\_\+add\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{const arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$}]{p\+SrcA, }
+\item[{const arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$}]{p\+SrcB, }
+\item[{arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$}]{p\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{group__MatrixAdd_ga7d9d7d81a0832a17b831aad1e4a5dc16}{}\label{group__MatrixAdd_ga7d9d7d81a0832a17b831aad1e4a5dc16}
+
+
+Q31 matrix addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$p\+SrcA} & points to the first input matrix structure \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+SrcB} & points to the second input matrix structure \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Dst} & points to output matrix structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+I\+S\+M\+A\+T\+CH} or {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS} based on the outcome of size checking.
+\end{DoxyReturn}
+{\bfseries Scaling and Overflow Behavior\+:} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q31 range \mbox{[}0x80000000 0x7\+F\+F\+F\+F\+F\+FF\mbox{]} will be saturated. 
+\end{DoxyParagraph}

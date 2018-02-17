@@ -1,0 +1,101 @@
+\hypertarget{group__MatrixInit}{}\section{Matrix Initialization}
+\label{group__MatrixInit}\index{Matrix Initialization@{Matrix Initialization}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__MatrixInit_ga11e3dc41592a6401c13182fef9416a27}{arm\+\_\+mat\+\_\+init\+\_\+f32} (arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$S, uint16\+\_\+t n\+Rows, uint16\+\_\+t n\+Columns, float32\+\_\+t $\ast$p\+Data)
+\begin{DoxyCompactList}\small\item\em Floating-\/point matrix initialization. \end{DoxyCompactList}\item 
+void \hyperlink{group__MatrixInit_ga31a7c2b991803d49719393eb2d53dc26}{arm\+\_\+mat\+\_\+init\+\_\+q15} (arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$S, uint16\+\_\+t n\+Rows, uint16\+\_\+t n\+Columns, q15\+\_\+t $\ast$p\+Data)
+\begin{DoxyCompactList}\small\item\em Q15 matrix initialization. \end{DoxyCompactList}\item 
+void \hyperlink{group__MatrixInit_ga48a5e5d37e1f062cc57fcfaf683343cc}{arm\+\_\+mat\+\_\+init\+\_\+q31} (arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$S, uint16\+\_\+t n\+Rows, uint16\+\_\+t n\+Columns, q31\+\_\+t $\ast$p\+Data)
+\begin{DoxyCompactList}\small\item\em Q31 matrix initialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Initializes the underlying matrix data structure. The functions set the {\ttfamily num\+Rows}, {\ttfamily num\+Cols}, and {\ttfamily p\+Data} fields of the matrix data structure. 
+
+\subsection{Function Documentation}
+\index{Matrix Initialization@{Matrix Initialization}!arm\+\_\+mat\+\_\+init\+\_\+f32@{arm\+\_\+mat\+\_\+init\+\_\+f32}}
+\index{arm\+\_\+mat\+\_\+init\+\_\+f32@{arm\+\_\+mat\+\_\+init\+\_\+f32}!Matrix Initialization@{Matrix Initialization}}
+\subsubsection[{\texorpdfstring{arm\+\_\+mat\+\_\+init\+\_\+f32(arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$\+S, uint16\+\_\+t n\+Rows, uint16\+\_\+t n\+Columns, float32\+\_\+t $\ast$p\+Data)}{arm_mat_init_f32(arm_matrix_instance_f32 *S, uint16_t nRows, uint16_t nColumns, float32_t *pData)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+mat\+\_\+init\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$}]{S, }
+\item[{uint16\+\_\+t}]{n\+Rows, }
+\item[{uint16\+\_\+t}]{n\+Columns, }
+\item[{float32\+\_\+t $\ast$}]{p\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{group__MatrixInit_ga11e3dc41592a6401c13182fef9416a27}{}\label{group__MatrixInit_ga11e3dc41592a6401c13182fef9416a27}
+
+
+Floating-\/point matrix initialization. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the floating-\/point matrix structure. \\
+\hline
+\mbox{\tt in}  & {\em n\+Rows} & number of rows in the matrix. \\
+\hline
+\mbox{\tt in}  & {\em n\+Columns} & number of columns in the matrix. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+Data} & points to the matrix data array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Matrix Initialization@{Matrix Initialization}!arm\+\_\+mat\+\_\+init\+\_\+q15@{arm\+\_\+mat\+\_\+init\+\_\+q15}}
+\index{arm\+\_\+mat\+\_\+init\+\_\+q15@{arm\+\_\+mat\+\_\+init\+\_\+q15}!Matrix Initialization@{Matrix Initialization}}
+\subsubsection[{\texorpdfstring{arm\+\_\+mat\+\_\+init\+\_\+q15(arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$\+S, uint16\+\_\+t n\+Rows, uint16\+\_\+t n\+Columns, q15\+\_\+t $\ast$p\+Data)}{arm_mat_init_q15(arm_matrix_instance_q15 *S, uint16_t nRows, uint16_t nColumns, q15_t *pData)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+mat\+\_\+init\+\_\+q15 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$}]{S, }
+\item[{uint16\+\_\+t}]{n\+Rows, }
+\item[{uint16\+\_\+t}]{n\+Columns, }
+\item[{q15\+\_\+t $\ast$}]{p\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{group__MatrixInit_ga31a7c2b991803d49719393eb2d53dc26}{}\label{group__MatrixInit_ga31a7c2b991803d49719393eb2d53dc26}
+
+
+Q15 matrix initialization. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the floating-\/point matrix structure. \\
+\hline
+\mbox{\tt in}  & {\em n\+Rows} & number of rows in the matrix. \\
+\hline
+\mbox{\tt in}  & {\em n\+Columns} & number of columns in the matrix. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+Data} & points to the matrix data array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Matrix Initialization@{Matrix Initialization}!arm\+\_\+mat\+\_\+init\+\_\+q31@{arm\+\_\+mat\+\_\+init\+\_\+q31}}
+\index{arm\+\_\+mat\+\_\+init\+\_\+q31@{arm\+\_\+mat\+\_\+init\+\_\+q31}!Matrix Initialization@{Matrix Initialization}}
+\subsubsection[{\texorpdfstring{arm\+\_\+mat\+\_\+init\+\_\+q31(arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$\+S, uint16\+\_\+t n\+Rows, uint16\+\_\+t n\+Columns, q31\+\_\+t $\ast$p\+Data)}{arm_mat_init_q31(arm_matrix_instance_q31 *S, uint16_t nRows, uint16_t nColumns, q31_t *pData)}}]{\setlength{\rightskip}{0pt plus 5cm}void arm\+\_\+mat\+\_\+init\+\_\+q31 (
+\begin{DoxyParamCaption}
+\item[{arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$}]{S, }
+\item[{uint16\+\_\+t}]{n\+Rows, }
+\item[{uint16\+\_\+t}]{n\+Columns, }
+\item[{q31\+\_\+t $\ast$}]{p\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{group__MatrixInit_ga48a5e5d37e1f062cc57fcfaf683343cc}{}\label{group__MatrixInit_ga48a5e5d37e1f062cc57fcfaf683343cc}
+
+
+Q31 matrix initialization. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em $\ast$S} & points to an instance of the floating-\/point matrix structure. \\
+\hline
+\mbox{\tt in}  & {\em n\+Rows} & number of rows in the matrix. \\
+\hline
+\mbox{\tt in}  & {\em n\+Columns} & number of columns in the matrix. \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+Data} & points to the matrix data array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}

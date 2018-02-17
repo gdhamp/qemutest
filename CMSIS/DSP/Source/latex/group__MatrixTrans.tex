@@ -1,0 +1,41 @@
+\hypertarget{group__MatrixTrans}{}\section{Matrix Transpose}
+\label{group__MatrixTrans}\index{Matrix Transpose@{Matrix Transpose}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+arm\+\_\+status \hyperlink{group__MatrixTrans_gad7dd9f108429da13d3864696ceeec789}{arm\+\_\+mat\+\_\+trans\+\_\+f32} (const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Src, arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Floating-\/point matrix transpose. \end{DoxyCompactList}\item 
+arm\+\_\+status {\bfseries arm\+\_\+mat\+\_\+trans\+\_\+q15} (const arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+Src, arm\+\_\+matrix\+\_\+instance\+\_\+q15 $\ast$p\+Dst)\hypertarget{group__MatrixTrans_ga4f4f821cc695fd0ef9061d702e08050a}{}\label{group__MatrixTrans_ga4f4f821cc695fd0ef9061d702e08050a}
+
+\item 
+arm\+\_\+status {\bfseries arm\+\_\+mat\+\_\+trans\+\_\+q31} (const arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+Src, arm\+\_\+matrix\+\_\+instance\+\_\+q31 $\ast$p\+Dst)\hypertarget{group__MatrixTrans_ga30a4d49489ac67ff98a46b9f58f73bf1}{}\label{group__MatrixTrans_ga30a4d49489ac67ff98a46b9f58f73bf1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tranposes a matrix. Transposing an {\ttfamily M x N} matrix flips it around the center diagonal and results in an {\ttfamily N x M} matrix. 
+
+\subsection{Function Documentation}
+\index{Matrix Transpose@{Matrix Transpose}!arm\+\_\+mat\+\_\+trans\+\_\+f32@{arm\+\_\+mat\+\_\+trans\+\_\+f32}}
+\index{arm\+\_\+mat\+\_\+trans\+\_\+f32@{arm\+\_\+mat\+\_\+trans\+\_\+f32}!Matrix Transpose@{Matrix Transpose}}
+\subsubsection[{\texorpdfstring{arm\+\_\+mat\+\_\+trans\+\_\+f32(const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Src, arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$p\+Dst)}{arm_mat_trans_f32(const arm_matrix_instance_f32 *pSrc, arm_matrix_instance_f32 *pDst)}}]{\setlength{\rightskip}{0pt plus 5cm}arm\+\_\+status arm\+\_\+mat\+\_\+trans\+\_\+f32 (
+\begin{DoxyParamCaption}
+\item[{const arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$}]{p\+Src, }
+\item[{arm\+\_\+matrix\+\_\+instance\+\_\+f32 $\ast$}]{p\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{group__MatrixTrans_gad7dd9f108429da13d3864696ceeec789}{}\label{group__MatrixTrans_gad7dd9f108429da13d3864696ceeec789}
+
+
+Floating-\/point matrix transpose. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$p\+Src} & points to the input matrix \\
+\hline
+\mbox{\tt out}  & {\em $\ast$p\+Dst} & points to the output matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+I\+S\+M\+A\+T\+CH} or {\ttfamily A\+R\+M\+\_\+\+M\+A\+T\+H\+\_\+\+S\+U\+C\+C\+E\+SS} based on the outcome of size checking. 
+\end{DoxyReturn}
