@@ -10,9 +10,10 @@ DEPS := $(OBJS:.o=.d)
 INC_DIRS := $(shell find $(SRC_DIRS) -type d)
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-CFLAGS := -static
+CFLAGS := -static -g
 CPPFLAGS ?= $(INC_FLAGS) -I./CMSIS/Core/Include -I ./CMSIS/DSP/Include -MMD -MP
 
+LDFLAGS := -static
 
 ARCH        := M0l
 LIBDIR		:= CMSIS/DSP/Lib
